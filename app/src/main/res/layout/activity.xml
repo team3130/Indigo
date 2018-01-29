@@ -1,0 +1,128 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true" >
+
+
+    <com.team3130.vision3130.VisionTrackerGLSurfaceView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/my_gl_surface_view" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/connectionState"
+            android:layout_width="fill_parent"
+            android:layout_height="25dp"
+            android:background="@android:color/holo_red_light" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+            <ImageView
+                android:id="@+id/chargingIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:src="@android:drawable/ic_lock_idle_charging" />
+
+            <TextView
+                android:id="@+id/battery_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:gravity="top"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:text="\?\?%"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fps_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FPS:" />
+
+                <TextView
+                    android:id="@+id/proc_mode_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Processing mode:" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+
+                <ImageButton
+                    android:id="@+id/lockButton"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_weight=".1"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/locked"
+                    android:text="Show view options" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="-20dp"
+                android:paddingTop="7dp"
+                android:src="@drawable/battery" />
+
+            <ImageButton
+                android:id="@+id/viewSelectButton"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:layout_weight=".05"
+                android:background="@android:color/transparent"
+                android:onClick="showViewOptions"
+                android:paddingBottom="10dp"
+                android:paddingRight="5dp"
+                android:src="@android:drawable/ic_menu_view"
+                android:text="Show view options" />
+
+            <ImageButton
+                android:id="@+id/hsvEditButton"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight=".05"
+                android:background="@android:color/transparent"
+                android:onClick="openBottomSheet"
+                android:paddingBottom="10dp"
+                android:paddingRight="5dp"
+                android:src="@android:drawable/ic_menu_manage"
+                android:text="Edit HSV" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
